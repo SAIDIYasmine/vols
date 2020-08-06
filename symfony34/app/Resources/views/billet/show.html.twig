@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <style>
+        form {
+            display: inline-block;
+        }
+    </style>
+    <section class="page-section portfolio" id="voyageurs" style="margin-left: 200px;margin-right: 200px">
+        <br/>
+        <div class="container">
+            <div class="text-center">
+                <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Detail sur un billet</h2>
+            </div>
+            <section>
+                <br/>
+            </section>
+            <table class="table table-sm table-wight">
+                <tbody>
+                <tr class="table-danger">
+                    <th  style="width: 500px">Date</th>
+                    <td>{% if billet.date %}{{ billet.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                </tr>
+                <tr >
+                    <th>Source</th>
+                    <td>{{ billet.source }}</td>
+                </tr>
+                <tr class="table-dark">
+                    <th>Destination</th>
+                    <td>{{ billet.destination }}</td>
+                </tr>
+                <tr class="table-info">
+                    <th>Prix</th>
+                    <td>{{ billet.prix }}</td>
+                </tr>
+                <tr class="table-active">
+                    <th  style="width: 500px">Classe</th>
+                    <td>{{ billet.classe }}</td>
+                </tr>
+                </tbody>
+            </table>
+            <ul>
+                <button onclick="location.href='{{ path('billet_index') }}'" type="button"  class="btn btn-secondary">Retourner</button>
+                <button onclick="location.href='{{ path('billet_edit', { 'id': billet.id }) }}'" type="button"  class="btn btn-primary">modifier</button>
+                {{ form_start(delete_form) }}
+                    <input type="submit" value="Delete" class="btn btn-danger">
+                {{ form_end(delete_form) }}
+            </ul>
+        </div>
+    </section>
+{% endblock %}

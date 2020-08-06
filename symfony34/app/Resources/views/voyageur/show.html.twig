@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <style>
+        form {
+            display: inline-block;
+        }
+    </style>
+    <section class="page-section portfolio" id="voyageurs" style="margin-left: 200px;margin-right: 200px">
+        <br/>
+        <div class="container">
+            <div class="text-center">
+                <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Detail sur un voyageur</h2>
+            </div>
+            <section>
+                <br/>
+            </section>
+            <table class="table table-sm table-wight">
+                <tbody>
+                <tr class="table-danger">
+                    <th  style="width: 500px">Nom</th>
+                    <td>{{ voyageur.nom }}</td>
+                </tr>
+                <tr >
+                    <th>Prénom</th>
+                    <td>{{ voyageur.prenom }}</td>
+                </tr>
+                <tr class="table-dark">
+                    <th>Nationalité</th>
+                    <td>{{ voyageur.nationalire }}</td>
+                </tr>
+                <tr class="table-info">
+                    <th>Numéro de passeport</th>
+                    <td>{{ voyageur.numPasspot }}</td>
+                </tr>
+                <tr class="table-active">
+                    <th  style="width: 500px">Date de naissance</th>
+                    <td>{% if voyageur.dateNaissance %}{{ voyageur.dateNaissance|date('Y-m-d H:i:s') }}{% endif %}</td>
+                </tr>
+                </tbody>
+            </table>
+            <ul>
+                <button onclick="location.href='{{ path('voyageur_index') }}'" type="button"  class="btn btn-secondary">Retourner</button>
+                <button onclick="location.href='{{ path('voyageur_edit', { 'id': voyageur.id }) }}'" type="button"  class="btn btn-primary">modifier</button>
+                {{ form_start(delete_form) }}
+                <input type="submit" value="Delete" class="btn btn-danger">
+                {{ form_end(delete_form) }}
+            </ul>
+        </div>
+    </section>
+{% endblock %}

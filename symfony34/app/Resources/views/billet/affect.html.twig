@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <section class="page-section portfolio" id="voyageurs">
+        <br/>
+        <div class="container">
+            <div class="text-center">
+                <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Affectation d'un billet</h2>
+            </div>
+            <section>
+                <br/>
+            </section>
+            <div class="container-xl">
+                <div class="table-responsive">
+                    <div class="table-wrapper">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Prenom</th>
+                                <th>Nationalite</th>
+                                <th>Numero de passeport</th>
+                                <th>Date de naissance</th>
+                                <th>Affecter</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for voyageur in voyageurs %}
+                                <tr>
+                                    <td>{{ voyageur.nom }}</td>
+                                    <td>{{ voyageur.prenom }}</td>
+                                    <td>{{ voyageur.nationalire }}</td>
+                                    <td>{{ voyageur.numPasspot }}</td>
+                                    <td>{% if voyageur.dateNaissance %}{{ voyageur.dateNaissance|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                    <td>
+                                        <a href="{{path('billet_affected',{'idv':voyageur.id,'idb':id})}}"> <i class="fas fa-arrows-alt-v fa-fw fa-rotate-90" style="font-size:20px;color:#FFC733" title="Modifier"></i></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+
+                        <button style="margin-left: 400px" onclick="location.href='{{ path('billet_index') }}'" type="button"  class="btn btn-danger">Retour</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

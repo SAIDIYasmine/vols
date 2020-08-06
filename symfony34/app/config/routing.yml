@@ -1,0 +1,20 @@
+vol:
+    resource: "@VolBundle/Resources/config/routing.yml"
+    prefix:   /
+
+vols:
+    resource: "@VolsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ensias_grh:
+    resource: "@ensiasGRHBundle/Resources/config/routing.yml"
+    prefix:   /zellou
+
+ensias_grh_employe:
+    resource: "@ensiasGRHBundle/Resources/config/routing/employe.yml"
+    prefix:   /employe
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+

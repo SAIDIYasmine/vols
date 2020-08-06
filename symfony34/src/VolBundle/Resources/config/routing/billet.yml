@@ -1,0 +1,35 @@
+billet_index:
+    path:     /
+    defaults: { _controller: "VolBundle:billet:index" }
+    methods:  GET
+
+billet_show:
+    path:     /{id}/show
+    defaults: { _controller: "VolBundle:billet:show" }
+    methods:  GET
+
+billet_new:
+    path:     /new
+    defaults: { _controller: "VolBundle:billet:new" }
+    methods:  [GET, POST]
+
+billet_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "VolBundle:billet:edit" }
+    methods:  [GET, POST]
+
+billet_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "VolBundle:billet:delete" }
+    methods:  DELETE
+
+
+billet_affect:
+    path:     /{id}/affect
+    defaults: { _controller: "VolBundle:billet:affect" }
+    methods:  GET
+    
+billet_affected:
+    path:     /{idv}/{idb}/affected
+    defaults: { _controller: "VolBundle:billet:affected" }
+    methods:  GET

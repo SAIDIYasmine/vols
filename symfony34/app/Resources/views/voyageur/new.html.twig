@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="page-section portfolio" id="voyageurs" style="margin-right: 300px;margin-left: 300px">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Création d'un voyageur</h2>
+            </div>
+            <section>
+                <br/>
+            </section>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <input type="submit" class="btn btn-success" value="Creer" />
+            <button type="button" class="btn btn-secondary" onclick=" relocate_home()">Retourner</button>
+            {{ form_end(form) }}
+            <script>
+                function relocate_home() {
+                    location.href = "{{ path('voyageur_index') }}";
+                }
+            </script>
+        </div>
+    </section>
+{% endblock %}

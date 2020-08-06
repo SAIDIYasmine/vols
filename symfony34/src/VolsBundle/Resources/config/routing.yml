@@ -1,0 +1,20 @@
+vols_afficheVoyageur:
+    path:     /afficheVoyageur
+    defaults: { _controller: VolsBundle:Voyageur:afficheVoyageur }
+vols_ajoutVoyageur:
+    path:     /ajoutVoyageur
+    defaults: { _controller: VolsBundle:Voyageur:ajoutVoyageur }
+
+vols_afficheBillet:
+    path:     /afficheBillet
+    defaults: { _controller: VolsBundle:Voyageur:afficheBillet }
+
+vols_supprimerBillet:
+    path:     /supprimerBillet/{id}
+    defaults: { _controller: VolsBundle:Voyageur:supprimerBillet }
+
+
+vols_homepage:
+    path:     /
+    defaults: { _controller: VolsBundle:Default:index }
+

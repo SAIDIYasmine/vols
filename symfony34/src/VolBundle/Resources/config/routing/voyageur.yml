@@ -1,0 +1,25 @@
+voyageur_index:
+    path:     /
+    defaults: { _controller: "VolBundle:voyageur:index" }
+    methods:  GET
+
+voyageur_show:
+    path:     /{id}/show
+    defaults: { _controller: "VolBundle:voyageur:show" }
+    methods:  GET
+
+voyageur_new:
+    path:     /new
+    defaults: { _controller: "VolBundle:voyageur:new" }
+    methods:  [GET, POST]
+
+voyageur_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "VolBundle:voyageur:edit" }
+    methods:  [GET, POST]
+
+voyageur_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "VolBundle:voyageur:delete" }
+    methods:  DELETE
+

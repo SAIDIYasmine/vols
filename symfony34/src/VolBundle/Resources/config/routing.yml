@@ -1,0 +1,11 @@
+vol_billet:
+    resource: "@VolBundle/Resources/config/routing/billet.yml"
+    prefix:   /billet
+
+vol_homepage:
+    path:     /
+    defaults: { _controller: VolBundle:Default:index }
+
+vol_voyageur:
+    resource: "@VolBundle/Resources/config/routing/voyageur.yml"
+    prefix:   /voyageur

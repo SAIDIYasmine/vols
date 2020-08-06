@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <section class="page-section portfolio" id="voyageurs" >
+    <div class="container">
+      <div class="text-center">
+        <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Modifier les informations d'un billet</h2>
+      </div>
+      <section style="margin-right: 300px; margin-left: 300px">
+        <br/>
+
+      {{ form_start(edit_form)}}
+      {{ form_widget(edit_form) }}
+      <input type="submit" class="btn btn-success value="Modifier" />
+      {{ form_end(edit_form) }}
+      {{ form_start(delete_form) }}
+      <button style="margin-left: 300px"  type="button" class="btn btn-secondary" onclick=" relocate_home()">Retourner</button>
+      <input type="submit" value="Delete" class="btn btn-danger">
+      {{ form_end(delete_form) }}
+      <script>
+        function relocate_home() {
+          location.href = "{{ path('billet_index') }}";
+        }
+      </script>
+      </section>
+    </div>
+  </section>
+{% endblock %}

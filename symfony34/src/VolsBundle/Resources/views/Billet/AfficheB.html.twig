@@ -1,0 +1,27 @@
+<h2>Liste Billets</h2>
+
+
+<table border="2">
+    <tr>
+        <th>ID</th>
+        <th>Source</th>
+        <th>Destination</th>
+        <th>Prix</th>
+        <th>Classe</th>
+        <th>Supprimer</th>
+
+    </tr>
+    {% for b in billet %}
+        <tr>
+            <td>{{b.id}}</td>
+            <td>{{b.source}}</td>
+            <td>{{b.destination}}</td>
+            <td>{{b.prix}}</td>
+            <td>{{b.classe}}</td>
+            <td><a href="{{ path('vols_supprimerBillet',{'id':b.id}) }}" />Supprimer</td>
+
+
+
+        </tr>
+    {% endfor %}
+</table>

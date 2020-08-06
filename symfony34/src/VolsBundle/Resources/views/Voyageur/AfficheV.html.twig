@@ -1,0 +1,29 @@
+<h2>Liste voyageurs</h2>
+
+
+<table border="2">
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Nationalité</th>
+        <th>Num Passport</th>
+        <th>Date Naissance</th>
+
+
+    </tr>
+    {% for v in voyageur %}
+
+    <tr>
+        <td>{{v.id}}</td>
+        <td>{{v.nom}}</td>
+        <td>{{v.prenom}}</td>
+        <td>{{v.nationalite}}</td>
+        <td>{{v.numPassport}}</td>
+        <td>{{v.dateNaissance|date('Y-m-d')}}</td>
+        
+
+
+    </tr>
+    {% endfor %}
+</table>

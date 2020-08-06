@@ -1,0 +1,4 @@
+services:
+#    vols.example:
+#        class: VolsBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
